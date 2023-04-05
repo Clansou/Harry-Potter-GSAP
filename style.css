@@ -1,86 +1,48 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-body {
-  overflow: hidden;
-  user-select: none;
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-main {
-  visibility: hidden;
-  height: 100%;
+.form-group {
+  margin-bottom: 2rem;
 }
 
-#canvas {
-  height: 100%;
-  width: 100%;
-  cursor: crosshair;
+label {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.slider-row {
-  margin-top: 10px;
-}
-
-.slider-row div {
-  padding-right: 10px;
-}
-
-.slider-row input {
-  min-width: 150px;
-}
-
-path,
-polyline {
-  fill: none;
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-miterlimit: 10;
-}
-
-table {
-  margin-top: 15px;
-}
-
-.table-condensed > tbody > tr > td,
-.table-condensed > tbody > tr > th,
-.table-condensed > thead > tr > td,
-.table-condensed > thead > tr > th {
-  padding: 1px 4px;
-}
-
-.sidebar {
-  border: 1px solid #eee;
-  position: absolute;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  padding: 5px 15px;
-  background: white;
-}
-
-.sidebar.drawing {
-  pointer-events: none;
-}
-
-.sidebar .row:first-child {
-  margin-bottom: 6px;
-}
-
-.content {
-  position: relative;
-  height: 100%;
-}
-
-hr {
-  margin-bottom: 0;
-}
-
-.sidebar {
-  height: initial;
+input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   border: none;
-  background: transparent;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  font-size: 1.2rem;
+  background-color: #8c3;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #b44;
+}
+
+.result {
+  font-size: 1.5rem;
+  margin-top: 2rem;
 }

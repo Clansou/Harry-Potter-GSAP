@@ -5,35 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/build/md5.min.js"></script>
+    <title>Hawy Potseuw</title>
 </head>
 <body>
     <main>
-
-        <div class="content">
-          <svg id="canvas"></svg>
+      <div class="container">
+        <h1>Quelle est votre école d'Harry Potter ?</h1>
+        <div class="form-group">
+          <label for="name">Entrez votre nom :</label>
+          <input type="text" id="name" class="form-control">
         </div>
-      
-        <div class="sidebar">
-      
-          <div class="row">
-            <div class="col-xs-12">
-              <h3>Start Doodling...</h3>      
-            </div>
-          </div>
-              
-          <div class="row control">
-            <div class="col-xs-12">      
-              <button id="clear" class="btn btn-default">Clear</button>
-            </div>
-          </div>
-
-        </div>  
-      </main>
+        <button class="btn" onclick="getHouse()">Obtenir l'école</button>
+        <div class="result" id="result"></div>
+      </div>
+    
+    </main>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
-registerPlugin()
 <script src="script.js"></script>
 </html>
