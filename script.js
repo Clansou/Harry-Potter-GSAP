@@ -1,4 +1,4 @@
-export function getHouse() {
+function getHouse(onComplete) {
   var name = document.getElementById("name").value;
   if(name != ""){
     var hash = md5(name);
@@ -24,5 +24,17 @@ export function getHouse() {
     var resultElement = document.getElementById("result");
     resultElement.innerHTML = "Il faut écrire un mot pour savoir dans quel école c'est.";
   }
+  if (typeof onComplete === "function") {
+    onComplete();
+  }
  
 }
+
+import { gsap } from "./node_modules/gsap/index.js";
+
+const myButton = document.querySelector(".btn");
+myButton.addEventListener("click", () => {
+    getHouse(() => {
+        gsap.to("#result", { duration: 1, x: 100, y: 100 });
+    });
+});
