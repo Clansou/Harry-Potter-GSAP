@@ -1,3 +1,6 @@
+import { gsap } from "./node_modules/gsap/index.js";
+let isAnimating = false;
+
 function getHouse(onComplete) {
   var name = document.getElementById("name").value;
   if(name != ""){
@@ -29,12 +32,24 @@ function getHouse(onComplete) {
   }
  
 }
+function animateElement() {
+  gsap.to("#result", { duration: 1, x: 100, y: 100 });
+}
 
-import { gsap } from "./node_modules/gsap/index.js";
 
-const myButton = document.querySelector(".btn");
-myButton.addEventListener("click", () => {
+document.querySelector(".btn").addEventListener("click", () => {
     getHouse(() => {
-        gsap.to("#result", { duration: 1, x: 100, y: 100 });
+      if (isAnimating) {
+        // If the animation is already playing, stop it and reset the element position
+        gsap.killTweensOf("#result");
+        gsap.set("#result", { x: 0, y: 0 });
+        isAnimating = false;
+        animateElement();
+        isAnimating = true;
+      } else {
+        // If the animation is not playing, start it
+        animateElement();
+        isAnimating = true;
+      }
     });
 });
