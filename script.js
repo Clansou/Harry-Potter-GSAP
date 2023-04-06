@@ -1,4 +1,4 @@
-function getHouse() {
+export function getHouse() {
   var name = document.getElementById("name").value;
   if(name != ""){
     var hash = md5(name);
