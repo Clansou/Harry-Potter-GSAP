@@ -6,8 +6,16 @@ const welcomeBtn = document.getElementById("welcomeBtn");
 const seeSchoolDiv = document.getElementById("seeSchoolDiv")
 
 welcomeBtn.addEventListener("click", () => {
-  welcomeDiv.style.display = "none";
-  seeSchoolDiv.style.zIndex = "2";
+  seeSchoolDiv.style.scale = "1";
+  seeSchoolDiv.style.display = "block";
+
+  gsap.from(seeSchoolDiv, {
+    scale: 0,
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+  });
+
 });
 
 gsap.from("#welcomeTitle", {
@@ -67,7 +75,8 @@ function getHouse(onComplete) {
  
 }
 function animateElement() {
-  gsap.to("#result", { duration: 1, x: 100, y: 100 });
+  gsap.to("#result", { duration: 1, y: 100 });
+  gsap.to("#result", { duration: 1, y: 0 });
 }
 
 

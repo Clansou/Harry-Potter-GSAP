@@ -15,7 +15,7 @@
 
 #imgPoud{
   background-image: url(img/poud.jpg);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,6 +25,7 @@
   top: 0;
   z-index: -1;
 }
+
 
 
 #welcomeBtn {
@@ -56,11 +57,16 @@
 
 
 #seeSchoolDiv {
-  max-width: 500px;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   margin: 0 auto;
   text-align: center;
-  position: relative;
-  z-index: -2;
+  position: absolute;
+  z-index: 2;
+  display: none;
+  background-color: rgb(25, 25, 25);
 }
 
 .form-group {
