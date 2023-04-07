@@ -1,12 +1,66 @@
-.container {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color : antiquewhite;
+}
+
+#welcomeContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30vh;
+  gap: 3vh;
+}
+
+#imgPoud{
+  background-image: url(img/poud.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+
+#welcomeBtn {
+  font-size: 1.2rem;
+  background-color: #8c3;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#seeSchoolDiv {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  position: relative;
+  z-index: -2;
 }
 
 .form-group {

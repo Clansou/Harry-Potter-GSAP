@@ -10,16 +10,24 @@
 </head>
 <body>
     <main>
-      <div class="container">
-        <h1>Quelle est votre école d'Harry Potter ?</h1>
+      <div id="welcome">
+        <div id="imgPoud"></div>
+        <div id="welcomeContent">
+          <h1 id="welcomeTitle">Bienvenue à Poudlard</h1>
+          <h2 id="welcomeSub">Voyons voir à quelle maison vous appartenez !</h2>
+          <button id="welcomeBtn">Entrer</button>
+        </div>
+      </div>
+
+      <div id="seeSchoolDiv">
+        <h1>Entrez votre nom pour savoir quelle est votre école d'Harry Potter ?</h1>
         <div class="form-group">
           <label for="name">Entrez votre nom :</label>
           <input type="text" id="name" class="form-control">
         </div>
-        <button class="btn">Obtenir l'école</button>
+        <button class="btn">Découvrir l'école</button>
         <div class="result" id="result"></div>
       </div>
-    
     </main>
 </body>
 <script type="module" src="script.js"></script>
