@@ -6,7 +6,8 @@ const welcomeBtn = document.getElementById("welcomeBtn");
 const welcomeTitle = document.getElementById("welcomeTitle");
 const welcomeSub = document.getElementById("welcomeSub");
 const seeSchoolDiv = document.getElementById("seeSchoolDiv")
-var resultElement = document.getElementById("result");
+const resultElement = document.getElementById("result");
+const châpô = document.getElementById("chapeauchapeau");
 
 welcomeBtn.addEventListener("click", () => {
   seeSchoolDiv.style.scale = "1";
@@ -107,8 +108,13 @@ function getHouse(onComplete) {
  
 }
 function animateElement() {
-  gsap.to(resultElement, { duration: 0, y:-100 });
-  gsap.to(resultElement, { duration: 1, y:0 });
+  gsap.to(resultElement, { duration: 0, opacity:0, y:-100});
+  gsap.to(châpô,{duration: 0.1, rotation: 20});
+  gsap.to(châpô,{duration: 0.2, rotation: -20,delay:0.1});
+  gsap.to(châpô,{duration: 0.2, rotation: 20,delay:0.3});
+  gsap.to(châpô,{duration: 0.2, rotation: -20,delay:0.5});
+  gsap.to(châpô,{duration: 0.1, rotation: 0,delay:0.6});
+  gsap.to(resultElement, { duration: 1,opacity:1, y:0 ,delay:1});
 }
 
 
