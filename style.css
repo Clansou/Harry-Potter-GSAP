@@ -12,6 +12,9 @@
   margin-top: 30vh;
   gap: 3vh;
 }
+#welcomeTitle,#welcomeSub{
+  position: relative;
+}
 
 #imgPoud{
   background-image: url(img/poud.jpg);
@@ -31,6 +34,7 @@
 #welcomeBtn {
   font-size: 1.2rem;
   background-color: #8c3;
+  position: relative;
   color: #fff;
   border: none;
   border-radius: 0.5rem;
@@ -66,7 +70,11 @@
   position: absolute;
   z-index: 2;
   display: none;
-  background-color: rgb(25, 25, 25);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(1px);
+  background-image: url(img/Hall.webp);
 }
 
 .form-group {

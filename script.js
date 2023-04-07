@@ -3,17 +3,44 @@ let isAnimating = false;
 
 const welcomeDiv = document.getElementById("welcome");
 const welcomeBtn = document.getElementById("welcomeBtn");
+const welcomeTitle = document.getElementById("welcomeTitle");
+const welcomeSub = document.getElementById("welcomeSub");
 const seeSchoolDiv = document.getElementById("seeSchoolDiv")
 
 welcomeBtn.addEventListener("click", () => {
   seeSchoolDiv.style.scale = "1";
   seeSchoolDiv.style.display = "block";
+  welcomeTitle.style.left= "-150px";
+  welcomeTitle.style.opacity= "0";
+  welcomeSub.style.opacity= "0";
+  welcomeSub.style.left= "150px";
+  welcomeBtn.style.opacity="0";
+  welcomeBtn.style.top="150px";
 
   gsap.from(seeSchoolDiv, {
     scale: 0,
     opacity: 0,
     duration: 1,
     delay: 0.5,
+  });
+  gsap.from(welcomeBtn, {
+    opacity: 1,
+    y:-150,
+    duration: 1,
+    delay: 0,
+  });
+  gsap.from(welcomeTitle, {
+    opacity: 1,
+    x: 150,
+    duration: 1,
+    delay: 0,
+  });
+  
+  gsap.from(welcomeSub, {
+    opacity: 1,
+    x: -150,
+    duration: 1,
+    delay: 0,
   });
 
 });
@@ -31,6 +58,12 @@ gsap.from("#welcomeSub", {
   duration: 1,
   delay: 1,
 });
+gsap.from(welcomeBtn, {
+  scale: 0,
+  duration: 0.5,
+  delay: 1.5,
+});
+
 
 
 
