@@ -1,6 +1,40 @@
 import { gsap } from "./node_modules/gsap/index.js";
 let isAnimating = false;
 
+const welcomeDiv = document.getElementById("welcome");
+const welcomeBtn = document.getElementById("welcomeBtn");
+const seeSchoolDiv = document.getElementById("seeSchoolDiv")
+
+welcomeBtn.addEventListener("click", () => {
+  welcomeDiv.style.display = "none";
+  seeSchoolDiv.style.zIndex = "2";
+});
+
+gsap.from("#welcomeTitle", {
+  opacity: 0,
+  x: -150,
+  duration: 1,
+  delay: 1,
+});
+
+gsap.from("#welcomeSub", {
+  opacity: 0,
+  x: 150,
+  duration: 1,
+  delay: 1,
+});
+
+
+
+
+
+
+
+
+
+
+
+
 function getHouse(onComplete) {
   var name = document.getElementById("name").value;
   if(name != ""){
