@@ -66,6 +66,7 @@
   top: 0;
   left: 0;
   margin: 0 auto;
+  padding-top: 20vh;
   text-align: center;
   position: absolute;
   z-index: 2;
@@ -73,7 +74,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: blur(1px);
   background-image: url(img/Hall.webp);
 }
 
@@ -113,4 +113,5 @@ input {
 .result {
   font-size: 1.5rem;
   margin-top: 2rem;
+  scale: 0;
 }

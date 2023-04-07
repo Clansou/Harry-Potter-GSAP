@@ -6,6 +6,7 @@ const welcomeBtn = document.getElementById("welcomeBtn");
 const welcomeTitle = document.getElementById("welcomeTitle");
 const welcomeSub = document.getElementById("welcomeSub");
 const seeSchoolDiv = document.getElementById("seeSchoolDiv")
+var resultElement = document.getElementById("result");
 
 welcomeBtn.addEventListener("click", () => {
   seeSchoolDiv.style.scale = "1";
@@ -95,11 +96,9 @@ function getHouse(onComplete) {
       house = "Serdaigle";
     }
   
-    var resultElement = document.getElementById("result");
     resultElement.innerHTML = name + ", vous êtes à " + house + " !";
   }
   else{
-    var resultElement = document.getElementById("result");
     resultElement.innerHTML = "Il faut écrire un mot pour savoir dans quel école c'est.";
   }
   if (typeof onComplete === "function") {
@@ -108,8 +107,7 @@ function getHouse(onComplete) {
  
 }
 function animateElement() {
-  gsap.to("#result", { duration: 1, y: 100 });
-  gsap.to("#result", { duration: 1, y: 0 });
+  gsap.to("#result", { duration: 1, scale:1 });
 }
 
 
@@ -118,7 +116,6 @@ document.querySelector(".btn").addEventListener("click", () => {
       if (isAnimating) {
         // If the animation is already playing, stop it and reset the element position
         gsap.killTweensOf("#result");
-        gsap.set("#result", { x: 0, y: 0 });
         isAnimating = false;
         animateElement();
         isAnimating = true;
