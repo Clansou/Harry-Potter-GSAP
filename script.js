@@ -96,10 +96,10 @@ function getHouse(onComplete) {
       house = "Serdaigle";
     }
   
-    resultElement.innerHTML = name + ", vous êtes à " + house + " !";
+    resultElement.innerHTML = house;
   }
   else{
-    resultElement.innerHTML = "Il faut écrire un mot pour savoir dans quel école c'est.";
+    resultElement.innerHTML = "";
   }
   if (typeof onComplete === "function") {
     onComplete();
