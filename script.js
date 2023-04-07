@@ -107,7 +107,8 @@ function getHouse(onComplete) {
  
 }
 function animateElement() {
-  gsap.to("#result", { duration: 1, scale:1 });
+  gsap.to(resultElement, { duration: 0, y:-100 });
+  gsap.to(resultElement, { duration: 1, y:0 });
 }
 
 

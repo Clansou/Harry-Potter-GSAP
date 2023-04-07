@@ -113,10 +113,12 @@ input {
 .result {
   font-size: 1.5rem;
   margin-top: 2rem;
-  scale: 0;
+  position: relative;
 }
 #chapeauchapeau{
   width: 200px;
+  position: relative;
+  z-index: 100000;
   background-image: url(img/chapeau.jpg);
   margin-left: auto;
   margin-right: auto;
