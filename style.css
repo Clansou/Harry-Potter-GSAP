@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   color : antiquewhite;
+  font-family: 'Harry Potter', sans-serif;
+  overflow: hidden;
 }
 
 #welcomeContent{
@@ -29,36 +31,26 @@
   z-index: -1;
 }
 
-
+#welcomeSub{
+  margin-bottom: 5vh;
+}
 
 #welcomeBtn {
-  font-size: 1.2rem;
-  background-color: #8c3;
+  background-image: url(img/wood.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #604c4c;
   position: relative;
-  color: #fff;
+  color: antiquewhite;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 15px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  padding: 1% 4% 0 4%;
+  font-size: 32px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #seeSchoolDiv {
   width: 100vw;
@@ -93,21 +85,33 @@ input {
   border-radius: 0.5rem;
   border: none;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  color: brown;
+}
+
+input:focus{
+  outline: none;
 }
 
 .btn {
-  font-size: 1.2rem;
-  background-color: #8c3;
-  color: #fff;
+  background-image: url(img/wood.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #604c4c;
+  position: relative;
+  color: antiquewhite;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 15px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  padding: 1% 4% 0 4%;
+  font-size: 32px;
   transition: background-color 0.2s ease;
 }
 
 .btn:hover {
   background-color: #b44;
+  transition: ease-in-out 0.5s;
 }
 
 .result {

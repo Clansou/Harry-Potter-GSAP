@@ -1,7 +1,6 @@
 import { gsap } from "./node_modules/gsap/index.js";
 let isAnimating = false;
 
-const welcomeDiv = document.getElementById("welcome");
 const welcomeBtn = document.getElementById("welcomeBtn");
 const welcomeTitle = document.getElementById("welcomeTitle");
 const welcomeSub = document.getElementById("welcomeSub");
@@ -20,14 +19,12 @@ welcomeBtn.addEventListener("click", () => {
   welcomeBtn.style.top="150px";
 
   gsap.from(seeSchoolDiv, {
-    scale: 0,
     opacity: 0,
     duration: 1,
     delay: 0.5,
   });
   gsap.from(welcomeBtn, {
     opacity: 1,
-    y:-150,
     duration: 1,
     delay: 0,
   });
@@ -45,6 +42,12 @@ welcomeBtn.addEventListener("click", () => {
     delay: 0,
   });
 
+  gsap.to("#imgPoud", {
+    opacity: 0,
+    duration: 1,
+    scale: 2,
+  });
+
 });
 
 gsap.from("#welcomeTitle", {
@@ -60,23 +63,29 @@ gsap.from("#welcomeSub", {
   duration: 1,
   delay: 1,
 });
-gsap.from(welcomeBtn, {
-  scale: 0,
-  duration: 0.5,
+gsap.from("#welcomeBtn", {
+  opacity: 0,
+  duration: 1,
+  delay: 2,
+});
+gsap.from("#welcomeBtn", {
+  opacity: 0,
+  duration: 1,
   delay: 1.5,
 });
 
+gsap.to(welcomeBtn, {
+  y: -20, 
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut", 
+  duration: 1.5
+});
 
-
-
-
-
-
-
-
-
-
-
+const gryffindorImage = "img/gry.webp";
+const slytherinImage = "img/serp.png";
+const hufflepuffImage = "img/pou.png";
+const ravenclawImage = "img/ser.png";
 
 function getHouse(onComplete) {
   var name = document.getElementById("name").value;
@@ -86,27 +95,31 @@ function getHouse(onComplete) {
   
     var houseNumber = hashValue % 4 + 1;
     var house;
+    const image = "";
   
     if (houseNumber === 1) {
       house = "Gryffondor";
+      image = gryffindorImage;
     } else if (houseNumber === 2) {
       house = "Serpentard";
+      image = slytherinImage;
     } else if (houseNumber === 3) {
       house = "Poufsouffle";
+      image = hufflepuffImage;
     } else {
       house = "Serdaigle";
+      image = ravenclawImage;
     }
   
     resultElement.innerHTML = house;
+    document.getElementById("house-image").src = image;
   }
-  else{
-    resultElement.innerHTML = "";
-  }
+
   if (typeof onComplete === "function") {
     onComplete();
   }
- 
 }
+
 function animateElement() {
   gsap.to(resultElement, { duration: 0, opacity:0, y:-100});
   gsap.to(châpô,{duration: 0.1, rotation: 20});
@@ -117,17 +130,14 @@ function animateElement() {
   gsap.to(resultElement, { duration: 1,opacity:1, y:0 ,delay:1});
 }
 
-
 document.querySelector(".btn").addEventListener("click", () => {
     getHouse(() => {
       if (isAnimating) {
-        // If the animation is already playing, stop it and reset the element position
         gsap.killTweensOf("#result");
         isAnimating = false;
         animateElement();
         isAnimating = true;
       } else {
-        // If the animation is not playing, start it
         animateElement();
         isAnimating = true;
       }
