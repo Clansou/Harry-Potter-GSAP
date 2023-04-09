@@ -82,6 +82,7 @@ label {
 input {
   font-size: 1.2rem;
   padding: 0.5rem;
+  padding-top: 14px;
   border-radius: 0.5rem;
   border: none;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
@@ -124,6 +125,7 @@ input:focus{
   position: relative;
   z-index: 100000;
   background-image: url(img/chapeau.png);
+  background-repeat: round;
   margin-left: auto;
   margin-right: auto;
   margin-top: 52px;
