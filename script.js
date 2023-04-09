@@ -90,27 +90,42 @@ function getHouse(onComplete) {
   
     var houseNumber = hashValue % 4 + 1;
     var house;
+    var imgSrc;
   
-    if (houseNumber === 1) {
-      house = "Gryffondor";
-    } else if (houseNumber === 2) {
-      house = "Serpentard";
-    } else if (houseNumber === 3) {
-      house = "Poufsouffle";
-    } else {
-      house = "Serdaigle";
+    switch (houseNumber) {
+      case 1:
+        house = "Gryffondor";
+        imgSrc = "gry.png";
+        break;
+      case 2:
+        house = "Serpentard";
+        imgSrc = "serp.png";
+        break;
+      case 3:
+        house = "Poufsouffle";
+        imgSrc = "pouf.png";
+        break;
+      case 4:
+        house = "Serdaigle";
+        imgSrc = "ser.png";
+        break;
+      default:
+        house = "";
+        imgSrc = "wood.png";
     }
   
     resultElement.innerHTML = house;
+    document.getElementById("houseImg").src = imgSrc;
   }
   else{
     resultElement.innerHTML = "";
+    document.getElementById("houseImg").src = "default-image.png";
   }
   if (typeof onComplete === "function") {
     onComplete();
   }
- 
 }
+
 
 function animateElement() {
   gsap.to(resultElement, { duration: 0, opacity:0, y:-100});
