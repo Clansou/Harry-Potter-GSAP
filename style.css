@@ -130,3 +130,11 @@ input:focus{
   margin-right: auto;
   margin-top: 52px;
 }
+
+#houseImg{
+  display: none;
+  position: absolute;
+  width: 20vw;
+  bottom: 5vh;
+  right: 5vw;
+}

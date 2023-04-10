@@ -83,48 +83,31 @@ gsap.to(welcomeBtn, {
 });
 
 function getHouse(onComplete) {
-  var name = document.getElementById("name").value;
-  if(name != ""){
-    var hash = md5(name);
-    var hashValue = parseInt(hash.substring(0, 8), 16);
-  
-    var houseNumber = hashValue % 4 + 1;
-    var house;
-    var imgSrc;
-  
-    switch (houseNumber) {
-      case 1:
-        house = "Gryffondor";
-        imgSrc = "gry.png";
-        break;
-      case 2:
-        house = "Serpentard";
-        imgSrc = "serp.png";
-        break;
-      case 3:
-        house = "Poufsouffle";
-        imgSrc = "pouf.png";
-        break;
-      case 4:
-        house = "Serdaigle";
-        imgSrc = "ser.png";
-        break;
-      default:
-        house = "";
-        imgSrc = "wood.png";
-    }
-  
+  const name = document.getElementById("name").value;
+  const resultElement = document.getElementById("result");
+
+  if(name !== ""){
+    const hash = md5(name);
+    const hashValue = parseInt(hash.substring(0, 8), 16);
+    const houseNumber = hashValue % 4 + 1;
+
+    const houseList = ["Gryffondor", "Serpentard", "Poufsouffle", "Serdaigle"];
+    const imgList = ["img/gry.webp", "img/serp.png", "img/pouf.png", "img/ser.png"];
+
+    const house = houseList[houseNumber - 1] || "";
+    const imgSrc = imgList[houseNumber - 1] || "img/wood.png";
+
     resultElement.innerHTML = house;
-    document.getElementById("houseImg").src = imgSrc;
+    const houseImg = document.getElementById("houseImg")
+    houseImg.style.display = "block";
+    houseImg.src = imgSrc;
   }
-  else{
-    resultElement.innerHTML = "";
-    document.getElementById("houseImg").src = "default-image.png";
-  }
+
   if (typeof onComplete === "function") {
     onComplete();
   }
 }
+
 
 
 function animateElement() {
