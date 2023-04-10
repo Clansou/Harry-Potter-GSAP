@@ -112,11 +112,13 @@ function getHouse(onComplete) {
 
 function animateElement() {
   gsap.to(resultElement, { duration: 0, opacity:0, y:-100});
+  gsap.to(houseImg,{opacity:0 ,scale:0, duration:0})
   gsap.to(châpô,{duration: 0.1, rotation: 20});
   gsap.to(châpô,{duration: 0.2, rotation: -20,delay:0.1});
   gsap.to(châpô,{duration: 0.2, rotation: 20,delay:0.3});
   gsap.to(châpô,{duration: 0.2, rotation: -20,delay:0.5});
   gsap.to(châpô,{duration: 0.1, rotation: 0,delay:0.6});
+  gsap.to(houseImg,{opacity:1 ,scale:1, duration:1})
   gsap.to(resultElement, { duration: 1,opacity:1, y:0 ,delay:1});
 }
 
